@@ -1,0 +1,471 @@
+
+
+
+.clearfix::after
+  content: ""
+  clear: both
+  display: table
+
+
+
+html,body
+  height: 100%
+  width: 100%
+  margin: 0
+  font-family: "Roboto"
+  font-weight: 300
+
+
+
+.global
+  overflow-x: hidden
+  width: 100%
+  height: 100%
+  
+  
+  
+.head
+  height: 100%
+  width: 100%
+  background: linear-gradient(to right top, darken(lightskyblue, 30%) 10%, lightskyblue 60%, darken(lightskyblue, 30%))
+  display: grid
+  grid-template-rows: 10% 55% 10% 10% 15%
+  grid-template-columns: 10% 20% 15% 5% 10% 10% 20% 10% 10%
+
+  .icon
+    font-size: 23px
+    font-family: 'Pacifico', cursive
+    float: left
+    color: darkblue
+    margin:
+      left: 15px
+    filter: drop-shadow(4px 4px 2px)
+    grid-row: 1 / span 1
+    grid-column: 1 / span 1
+
+  .nav
+    display: inline-block
+    float: right
+    margin-top: 10px
+    padding:
+      left: 0
+    grid-row: 1 / span 1
+    grid-column: 5 / span 4
+
+
+    .menu:first-child
+      margin-left: 0
+
+    .menu
+      display: inline-block
+      list-style-type: none
+      margin-right: 20px
+
+
+
+      a
+        text-decoration: none
+        color: saddlebrown
+        font-size: 25px
+        font-weight: 600
+
+      a:hover
+        color: sandybrown
+        transition: color .1s
+
+  .preview
+    
+    input
+      display: none
+    grid-row: 2 / span 1
+    grid-column: 3 / span 4
+
+    #galccs
+      position: relative
+      display: flex
+      flex-wrap: wrap
+      max-width: 600px
+      
+      margin: 20px auto
+      user-select: none
+      background: transparent
+      div
+        width: 100%
+        height: 300px
+        max-height: 40vh
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+      .item
+        position: absolute
+        z-index: -1
+        top: 0
+        left: 0
+        opacity: 0
+        transition: opasity .5s
+
+
+      label
+        cursor: pointer
+        width: 1px
+        height: 80px
+        max-height: 20vh
+        flex-grow: 1
+
+      .item img
+        object-fit: contain
+
+      input:checked+.item
+        z-index: 1
+        opacity: 1
+
+      input:checked+.item+label
+        transform: scale(.93)
+  
+    
+    
+  .want
+    width: 100px
+    height: 50px
+    background: linear-gradient(to bottom, darken(blue, 40%), darken(blue, 10%))
+    border: none
+    text-align: center
+    color: white
+    font-size: 15px
+    grid-row: 4 / span 1
+    grid-column: 4 / span 3
+    
+    filter: drop-shadow(3px 3px 4px blue)
+  .want:active
+    background: linear-gradient(to top, darken(blue, 40%), darken(blue, 10%))
+
+  .footer
+    width: 100%
+    height: 100%
+    background: rgba(0, 0, 0, .3)
+    grid-row: 5 / span 1
+    grid-column: 1 / span 8
+      
+.about
+
+	width: 100%
+	height: 100%
+	padding-top: 9px
+	
+	display: flex
+	flex-direction: row
+	justify-content: space-around
+	box-sizing: border-box
+	background: linear-gradient(to bottom, #2CF8FB, #74FF70)
+
+	
+	.about_icons
+
+		width: 100px
+		height: 100px
+
+		border: solid 1px transperent
+		border-radius: 100%
+		background: linear-gradient(to bottom, red, white)
+		.about_width
+			width: 150px
+			.text
+				padding-top: 30px
+				color: #7B7B7B
+				font-size: 15px
+				font-family: 'Saira Semi Condensed', sans-serif
+
+.prise
+	width: 100%
+	height: 30%
+	background: linear-gradient(to bottom, #74FF70 100%, #3BECBD)
+	
+	.cost
+		text-align: center
+		font-size: 25px
+		padding-top: 10px
+		font-weight: bold
+	.text
+		font-size: 20px
+		padding-left: 35px
+		padding-top: 10px
+		font-family: 'Saira Semi Condensed', sans-serif
+
+.answer 
+	width: 100%
+	height: 70%
+	background: linear-gradient(to bottom, #74FF70, #21C1C4)
+	.head_questions
+		text-align: center
+		font-size: 25px
+		font-weight: bold
+		padding-top: 6px
+	.question
+		.answers
+			font-size: 20px
+			padding-left: 13px
+			font-family: 'Saira Semi Condensed', sans-serif
+			list-style-type: none
+		.hidden
+			opacity: 0
+			font-size: 20px
+			padding-left: 15px
+			font-family: 'Saira Semi Condensed', sans-serif
+			list-style-type: none
+			transition: .5s all
+		.answers:active + .hidden, .answers:hover + .hidden
+			opacity: 1
+
+		
+.review
+	width: 100%
+	height: 60%
+	background: linear-gradient(to bottom, #21C1C4, #21C1C4)
+	.head_reviews
+		text-align: center
+		font-size: 20px
+		font-weight: bold
+		padding-top: 6px
+		
+	.flex_reviews
+		display: flex
+		height: 160px
+		.reviews
+			height: 80px
+			box-sizing: border-box
+			padding-top: 30px
+
+			font-family: 'Saira Semi Condensed', sans-serif
+			font-size: 20px
+			.text
+				clear: left
+					
+		.vk
+			width: 60px
+			height: 60px
+			display: block
+			
+			margin-left: 30px
+			margin-right: 10px
+			margin-top: 30px
+			border-radius: 50%
+
+
+
+.free-icon
+	display: none
+	width: 40px
+	height: 40px
+	background: transparent
+	grid-row: 1 / span 1
+	grid-column: 8 / span 1
+.mobile_menu
+	display: none
+	height: 100%
+	width: 100%
+	grid-row: 1 / span 5
+	grid-column: 9 / span 1
+	background: rgba(50, 50, 50, 1)
+
+	li
+		margin-top: 25%
+		list-style-type: none
+		text-align: center
+		a
+			color: white
+			font-size: 18px
+			text-decoration: none
+.free-icon:hover + .mobile_menu, .mobile_menu:hover
+	grid-column: 7 / 9
+.modal
+	display: none
+.show
+	position: fixed
+	top: calc(50% - 100px)
+	left: calc(50% - 150px)
+	width: 300px
+	height: 200px
+	font-size: 15px
+	background: linear-gradient(to left bottom, yellow, orange)
+	color: brown
+	border: 1px solid white
+	z-index: 10
+	padding-top: 5px
+	border-radius: 5px
+	span
+		text-decoration: underline
+		float: right
+		height: 20px
+		width: 20px
+		padding-top: 30%
+		padding-right: 34%
+	a
+		float: left
+		width: 40px
+		height: 40px
+		text-decoration: none
+		box-sizing: border-box
+		padding-top: 40%
+		padding-left: 20%
+
+
+
+
+	
+
+
+			
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//true media
+
+@media screen and (max-height: 630px)
+	
+	.head
+		.footer
+			display: none
+		.want
+			grid-row: 5 / span 1
+
+
+@media screen and (max-width: 1070px)
+	.head
+		.nav
+			grid-column: 4 / span 5
+
+@media screen and (max-width: 965px)
+	.head
+		.nav
+			grid-column: 3 / span 6
+		.want
+			margin-left: -3%
+	
+@media screen and (max-width: 769px)
+	.head
+		.nav
+			.menu
+				a
+					font-size: 18px
+		.want
+			margin-left: -7%
+	
+@media screen and (max-width: 550px)
+	.head
+		
+		.want
+			margin-left: -15%
+@media screen and (max-width: 375px)
+	.head
+		
+		.want
+			margin-left: -25%
+
+
+@media screen and (max-width: 660px)
+	.head
+		.nav
+			.menu
+				display: none
+	.mobile_menu, .free-icon
+		display: block
+
+
+
+
+
+@media screen and (max-width: 850px)
+	.review
+		height: 50%
+
+@media screen and (max-width: 780px)
+	.review 
+		height: 65%
+		.flex_reviews 
+			.reviews
+				font-size: 18px
+@media screen and (max-width: 650px)
+	.review 
+		.flex_reviews 
+			.reviews
+				font-size: 15px
+@media screen and (max-width: 620px)
+	.review 
+		height: 80%
+		.flex_reviews 
+			flex-wrap: wrap
+			.reviews
+				margin-left: 40px
+				font-size: 15px
+@media screen and (max-width: 430px)
+	.review 
+		height: 80%
+		.flex_reviews 
+			flex-wrap: wrap
+			.reviews
+				margin-left: 40px
+				font-size: 13px
+
+
+
+
+@media screen and (max-width: 500px)
+	.prise
+		.text
+			font-size: 17px
+	.answer 
+		.question 
+			.answers
+				font-size: 17px
+				
+			.hidden
+				font-size: 17px
+				
+@media screen and (max-width: 389px)
+	.prise
+		height: 40%
+	.answer 
+		.question 
+			.answers
+				font-size: 14px
+			.hidden
+				font-size: 14px
+
+
+
+@media screen and (max-width: 540px)
+	.about
+		.about_icons:last-child
+			display: none
+@media screen and (max-width: 340px)
+	.about 
+		height: 70%
+		.about_icons 
+			.about_width 
+				.text
+					font-size: 15px
+	
